@@ -1,0 +1,30 @@
+{{ toComment description }}
+{{#unless @root.config.noNamespaces}}
+namespace {{ convert name 'typeNames'}}Resolvers {
+{{/unless}}
+  interface {{#if @root.config.noNamespaces}}{{ convert name 'typeNames'}}{{/if}}Resolvers<Context = {{{ getContext }}}, TypeParent = {{{ getParentType this }}}> {
+    {{#each fields}}
+    {{ toComment description }}
+    {{ name }}{{#unless @root.config.strict}}?{{/unless}}: {{#if @root.config.noNamespaces}}{{ convert ../name 'typeNames'}}{{/if}}{{ getFieldResolverName name }}<{{{ getFieldType this }}}, TypeParent, Context>;
+    {{/each}}
+  }
+
+  {{#each fields}}
+
+  type {{#if @root.config.noNamespaces}}{{ convert ../name 'typeNames'}}{{/if}}{{ getFieldResolverName name }}<R = {{{ getFieldType this }}}, Parent = {{{ getParentType ../this }}}, Context = {{{ getContext }}}> = {{ getFieldResolver this ../this }};
+
+  {{~# if hasArguments }}
+
+  interface {{#if @root.config.noNamespaces}}{{ convert ../name 'typeNames'}}{{/if}}{{ convert name 'typeNames'}}Args {
+  {{#each arguments}}
+    {{ toComment description }}
+    {{ name }}{{ getOptionals this }}: {{ convertedType this }};
+  {{/each}}
+  }
+
+  {{/if}}
+  {{/each}}
+
+{{#unless @root.config.noNamespaces}}
+}
+{{/unless}}

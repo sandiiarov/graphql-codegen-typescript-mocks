@@ -1,0 +1,17 @@
+0 silly argv { _: [ 'publish' ],
+0 silly argv   exact: true,
+0 silly argv   'force-publish': '*',
+0 silly argv   forcePublish: '*',
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.10.8',
+0 silly argv   '$0':
+0 silly argv    '/Users/alex/Projects/graphql-codegen-typescript-mocks/node_modules/.bin/lerna' }
+1 notice cli v3.10.8
+2 verbose rootPath /Users/alex/Projects/graphql-codegen-typescript-mocks
+3 verbose session d1fe85baed7a27d8
+4 verbose user-agent lerna/3.10.8/node@v10.15.1+x64 (darwin)
+5 error Error: Command failed: git describe --always --long --dirty --first-parent
+5 error fatal: bad revision 'HEAD'
+5 error
+5 error     at makeError (/Users/alex/Projects/graphql-codegen-typescript-mocks/node_modules/execa/index.js:174:9)
+5 error     at Promise.all.then.arr (/Users/alex/Projects/graphql-codegen-typescript-mocks/node_modules/execa/index.js:278:16)

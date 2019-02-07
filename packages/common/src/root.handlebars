@@ -1,0 +1,13 @@
+{{{ defineMaybe }}}
+
+{{#each inputTypes}}
+  {{~> type }}
+{{/each}}
+{{#each enums}}
+  {{~> enum }}
+{{/each}}
+{{#each scalars}}
+
+{{ toComment description }}
+{{#ifCond (convert name 'typeNames' ) "!==" (getScalarType name) }}type {{ convert name 'typeNames' }} = {{ getScalarType name }};{{/ifCond}}
+{{/each}}

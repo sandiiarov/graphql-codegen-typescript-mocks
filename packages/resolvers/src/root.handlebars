@@ -1,0 +1,82 @@
+type Resolver<Result, Parent = {}, Context = {}, Args = {}> = (
+  parent: Parent,
+  args: Args,
+  context: Context,
+  info: any
+) => Promise<Result> | Result;
+
+interface ISubscriptionResolverObject<Result, Parent, Context, Args> {
+  subscribe<R = Result, P = Parent>(
+    parent: P,
+    args: Args,
+    context: Context,
+    info: any
+  ): AsyncIterator<R | Result> | Promise<AsyncIterator<R | Result>>;
+  resolve?<R = Result, P = Parent>(
+    parent: P,
+    args: Args,
+    context: Context,
+    info: any
+  ): R | Result | Promise<R | Result>;
+}
+
+type SubscriptionResolver<Result, Parent = {}, Context = {}, Args = {}> =
+  | ((...args: any[]) => ISubscriptionResolverObject<Result, Parent, Context, Args>)
+  | ISubscriptionResolverObject<Result, Parent, Context, Args>;
+
+type TypeResolveFn<Types, Parent = {}, Context = {}> = (
+  parent: Parent,
+  context: Context,
+  info: any
+) => Maybe<Types>;
+
+type NextResolverFn<T> = () => Promise<T>;
+
+type DirectiveResolverFn<TResult, TArgs = {}, TContext = {}> = (
+  next: NextResolverFn<TResult>,
+  source: any,
+  args: TArgs,
+  context: TContext,
+  info: any,
+) => TResult | Promise<TResult>;
+
+{{#each types}}
+{{~> resolver }}
+{{/each}}
+
+{{#each interfaces}}
+{{~> resolveType }}
+{{/each}}
+
+{{#each unions}}
+{{~> resolveType }}
+{{/each}}
+
+{{#each definedDirectives}}
+{{~> directive}}
+{{/each}}
+
+{{#each scalars}}
+{{~> scalar}}
+{{/each}}
+
+interface Mocks<Context = {{{ getContext }}}> {
+  {{#each types}}
+    {{ convert name 'typeNames'}}{{#unless @root.config.strict}}?(){{/unless}}: {{ convert name 'typeNames'}}Resolvers{{#unless @root.config.noNamespaces}}.Resolvers{{/unless}}<Context>;
+  {{/each}}
+  {{#each interfaces}}
+    {{ convert name 'typeNames'}}{{#unless @root.config.strict}}?{{/unless}}: {{ convert name 'typeNames'}}Resolvers{{#unless @root.config.noNamespaces}}.Resolvers{{/unless}};
+  {{/each}}
+  {{#each unions}}
+    {{ convert name 'typeNames'}}{{#unless @root.config.strict}}?{{/unless}}: {{ convert name 'typeNames'}}Resolvers{{#unless @root.config.noNamespaces}}.Resolvers{{/unless}};
+  {{/each}}
+  {{#each scalars}}
+    {{ convert name 'typeNames'}}{{#unless @root.config.strict}}?{{/unless}}: GraphQLScalarType;
+  {{/each}}
+}
+
+interface IDirectiveResolvers<Result> {
+  {{#each definedDirectives}}
+    {{ name }}{{#unless @root.config.strict}}?{{/unless}}: {{ convert name 'typeNames'}}DirectiveResolver<Result>;
+  {{/each}}
+}
