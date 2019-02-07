@@ -1,6 +1,6 @@
 {
   "name": "graphql-codegen-typescript-mocks-resolvers",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "graphql-codegen-cli resolvers template for TypeScript typings for writing mocks with graphql-tools",
   "author": "Alex Sandiiarov <sandiiarov@gmail.com>",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "build": "codegen-templates-scripts build"
   },
   "dependencies": {
-    "graphql-codegen-typescript-mocks-common": "0.1.1"
+    "graphql-codegen-typescript-mocks-common": "0.2.0"
   },
   "devDependencies": {
     "codegen-templates-scripts": "0.16.1",
