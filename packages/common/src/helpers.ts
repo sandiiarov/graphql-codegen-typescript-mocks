@@ -12,7 +12,7 @@ export function defineMaybe(options: Handlebars.HelperOptions): string {
   const config = options.data.root.config || {};
   const optionalType = config.optionalType || 'null';
 
-  return `export type Maybe<T> = T | ${optionalType};`;
+  return `type Maybe<T> = T | ${optionalType};`;
 }
 
 export function useMaybe(type: string): string {
