@@ -1,6 +1,6 @@
 {
   "name": "graphql-codegen-typescript-mocks-common",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "graphql-codegen-cli common template for TypeScript typings for writing mocks with graphql-tools",
   "author": "Alex Sandiiarov <sandiiarov@gmail.com>",
   "license": "MIT",
