@@ -20,5 +20,6 @@
     "codegen-templates-scripts": "0.16.1",
     "graphql": "14.1.1",
     "graphql-codegen-plugin-handlebars-helpers": "0.16.1"
-  }
+  },
+  "gitHead": "a55f23530fd21ecde992a5fcc239cedc1336bee6"
 }
