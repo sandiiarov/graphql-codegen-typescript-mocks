@@ -1,6 +1,6 @@
 {
   "name": "graphql-codegen-typescript-mocks-server",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "graphql-codegen-cli server template for TypeScript typings for writing mocks with graphql-tools",
   "author": "Alex Sandiiarov <sandiiarov@gmail.com>",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "build": "codegen-templates-scripts build"
   },
   "dependencies": {
-    "graphql-codegen-typescript-mocks-common": "0.2.0"
+    "graphql-codegen-typescript-mocks-common": "0.3.0"
   },
   "devDependencies": {
     "codegen-templates-scripts": "0.16.1",
