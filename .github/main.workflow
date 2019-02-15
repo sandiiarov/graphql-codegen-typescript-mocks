@@ -30,7 +30,7 @@ action "Build package" {
 }
 
 action "Publish package" {
-  needs = "Master"
+  needs = "Build package"
   uses = "actions/npm@master"
   args = "publish --access public"
   secrets = ["NPM_AUTH_TOKEN"]
