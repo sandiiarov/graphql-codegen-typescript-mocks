@@ -1,6 +1,6 @@
 {
   "name": "graphql-codegen-typescript-mocks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "graphql-codegen-cli mocks template for TypeScript typings for writing mocks with graphql-tools",
   "license": "MIT",
   "main": "dist/index.js",
