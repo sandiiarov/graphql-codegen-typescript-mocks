@@ -3,7 +3,7 @@ import { DocumentFile, PluginFunction } from 'graphql-codegen-core';
 import {
   initCommonTemplate,
   TypeScriptCommonConfig,
-} from 'graphql-codegen-typescript-mocks-common';
+} from 'graphql-codegen-typescript-common';
 import * as Handlebars from 'handlebars';
 import { getContext, importContext } from './context';
 import * as directive from './directive.handlebars';

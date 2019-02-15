@@ -3,7 +3,7 @@ import { Field, Interface, Type, Union } from 'graphql-codegen-core';
 import {
   convertedType,
   getFieldType as fieldType,
-} from 'graphql-codegen-typescript-mocks-common';
+} from 'graphql-codegen-typescript-common';
 import * as Handlebars from 'handlebars';
 import { SafeString } from 'handlebars';
 import { pickMapper, useDefaultMapper } from './mappers';
@@ -63,7 +63,7 @@ export const getFieldResolver = convert => (
     resolver = 'Resolver';
   }
 
-  const generics: string[] = ['R', 'Parent', 'Context'];
+  const generics: string[] = ['R', 'Parent', 'TContext'];
 
   if (field.hasArguments) {
     const prefix = config.noNamespaces ? convert(type.name, 'typeNames') : '';

@@ -1,17 +1,24 @@
 {
   "name": "graphql-codegen-typescript-mocks",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "author": "Alex Sandiiarov <sandiiarov@gmail.com>",
+  "version": "0.1.0",
+  "description": "graphql-codegen-cli mocks template for TypeScript typings for writing mocks with graphql-tools",
   "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "lerna run build",
-    "prerelease": "yarn build",
-    "release": "lerna publish --exact --force-publish=\"*\""
+    "build": "codegen-templates-scripts build",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "graphql-codegen-typescript-common": "0.16.1"
   },
   "devDependencies": {
-    "lerna": "^3.10.8"
+    "awesome-typescript-loader": "5.2.1",
+    "codegen-templates-scripts": "0.16.1",
+    "graphql": "14.1.1",
+    "graphql-codegen-core": "0.16.1",
+    "graphql-codegen-plugin-handlebars-helpers": "0.16.1",
+    "graphql-codegen-plugin-helpers": "0.16.1",
+    "typescript": "3.3.3"
   }
 }
