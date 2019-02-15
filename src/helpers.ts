@@ -5,7 +5,6 @@ import {
   getFieldType as fieldType,
 } from 'graphql-codegen-typescript-common';
 import * as Handlebars from 'handlebars';
-import { SafeString } from 'handlebars';
 import { pickMapper, useDefaultMapper } from './mappers';
 
 export function importFromGraphQL(options: Handlebars.HelperOptions) {
@@ -70,7 +69,7 @@ export const getFieldResolver = convert => (
     generics.push(`${prefix}${convert(field.name)}Args`);
   }
 
-  return new SafeString(`${resolver}<${generics.join(', ')}>`);
+  return new Handlebars.SafeString(`${resolver}<${generics.join(', ')}>`);
 };
 
 export function getTypenames(entity: Interface | Union): string {

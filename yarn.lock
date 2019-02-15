@@ -2183,15 +2183,6 @@ graphql-codegen-core@0.16.1:
     ts-log "2.1.4"
     winston "3.2.1"
 
-graphql-codegen-plugin-handlebars-helpers@0.16.1:
-  version "0.16.1"
-  resolved "https://registry.npmjs.org/graphql-codegen-plugin-handlebars-helpers/-/graphql-codegen-plugin-handlebars-helpers-0.16.1.tgz#a02c0d3cdda460f0da5923a835167812cc7f6a27"
-  integrity sha512-dsCXdFSSN9vi2/75VzqqFBkzxr4xlnuQjKSUeGsmU9ijXUs80fhcMk2Blkv3uAAhAkco0RnCaRIEs164Vdlxlg==
-  dependencies:
-    change-case "3.1.0"
-    common-tags "1.8.0"
-    handlebars "4.0.12"
-
 graphql-codegen-plugin-helpers@0.16.1:
   version "0.16.1"
   resolved "https://registry.npmjs.org/graphql-codegen-plugin-helpers/-/graphql-codegen-plugin-helpers-0.16.1.tgz#fa9f2d73b30a63f7db3cc7d1748fc419a679c160"

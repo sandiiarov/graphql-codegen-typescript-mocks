@@ -1,6 +1,6 @@
 {
   "name": "graphql-codegen-typescript-mocks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "graphql-codegen-cli mocks template for TypeScript typings for writing mocks with graphql-tools",
   "license": "MIT",
   "main": "dist/index.js",
@@ -10,15 +10,14 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "graphql-codegen-typescript-common": "0.16.1"
+    "graphql-codegen-typescript-common": "0.16.1",
+    "handlebars": "4.0.12"
   },
   "devDependencies": {
     "awesome-typescript-loader": "5.2.1",
     "codegen-templates-scripts": "0.16.1",
     "graphql": "14.1.1",
     "graphql-codegen-core": "0.16.1",
-    "graphql-codegen-plugin-handlebars-helpers": "0.16.1",
-    "graphql-codegen-plugin-helpers": "0.16.1",
     "typescript": "3.3.3"
   }
 }
