@@ -10,7 +10,7 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "graphql-codegen-typescript-common": "0.16.1",
+    "graphql-codegen-typescript-common": "0.17.0",
     "handlebars": "4.0.12"
   },
   "devDependencies": {
